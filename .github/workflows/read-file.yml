@@ -1,1 +1,17 @@
+name: Read index.html File
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Read and output index.html
+        run: cat index.html
